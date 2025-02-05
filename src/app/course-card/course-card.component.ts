@@ -5,6 +5,7 @@ import {
     ContentChildren,
     ElementRef,
     EventEmitter,
+    Inject,
     Input,
     OnInit,
     Output,
@@ -14,6 +15,7 @@ import {
 import {Course} from '../model/course';
 import {CourseImageComponent} from '../course-image/course-image.component';
 import { IToDos } from '../model/todos';
+import { APP_CONFIG, CONFIG_TOKEN, IAppConfig } from '../model/appconfig';
 
 @Component({
     selector: 'course-card',
@@ -33,8 +35,9 @@ export class CourseCardComponent implements OnInit {
     todoEmitter = new EventEmitter<IToDos>();
 
 
-    constructor() {
+    constructor(@Inject(CONFIG_TOKEN) private config:IAppConfig) {
 
+      console.log("App Configuration within CourseComponent: " + config.url, config.port);
     }
 
     ngOnInit() {
