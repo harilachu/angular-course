@@ -1,19 +1,19 @@
-<div class="course-card" *ngIf="course" #container>
+<div class="course-card" *ngIf="todo" #container>
 
   <div class="course-title">
-    {{ cardIndex || '' + ' ' + course.description }}
+    {{ todo.title }}
   </div>
 
-  <ng-content select="course-image"
-              *ngIf="course.iconUrl"></ng-content>
+  <ng-content select="div"></ng-content>
+
 
   <div class="course-description">
 
-    Edit Title: <input #courseTitle [value]="course.description">
+    Edit Title: <input #inputTitle [value]="todo.title">
 
   </div>
 
-  <div class="course-category" [ngSwitch]="course.category">
+  <!-- <div class="course-category" [ngSwitch]="course.category">
 
     <div class="category" *ngSwitchCase="'BEGINNER'">Beginner</div>
 
@@ -21,9 +21,9 @@
 
     <div class="category" *ngSwitchCase="'ADVANCED'">Advanced</div>
 
-  </div>
+  </div> -->
 
-  <button (click)="onSaveClicked(courseTitle.value)">Save Course</button>
+  <button (click)="onSaveClicked(inputTitle.value)">Save Todo</button>
 
 </div>
 

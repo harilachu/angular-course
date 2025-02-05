@@ -9,10 +9,13 @@
 
   <div class="courses">
 
-    <course-card *ngFor="let course of courses"
-                 [course]="course">
+    <!-- async pipe gets the values from observable object-->
+    <course-card *ngFor="let todo of (todos$ | async)"
+                 [todo]="todo">
 
-      <course-image [src]="course.iconUrl"></course-image>
+      <div>
+        <h1>{{todo.title}}</h1>
+      </div>
 
     </course-card>
 

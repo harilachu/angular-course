@@ -13,6 +13,7 @@ import {
 } from '@angular/core';
 import {Course} from '../model/course';
 import {CourseImageComponent} from '../course-image/course-image.component';
+import { IToDos } from '../model/todos';
 
 @Component({
     selector: 'course-card',
@@ -23,13 +24,13 @@ import {CourseImageComponent} from '../course-image/course-image.component';
 export class CourseCardComponent implements OnInit {
 
     @Input()
-    course: Course;
+    todo: IToDos;
 
     @Input()
     cardIndex: number;
 
-    @Output('courseChanged')
-    courseEmitter = new EventEmitter<Course>();
+    @Output('todoChanged')
+    todoEmitter = new EventEmitter<IToDos>();
 
 
     constructor() {
@@ -41,9 +42,9 @@ export class CourseCardComponent implements OnInit {
     }
 
 
-    onSaveClicked(description:string) {
+    onSaveClicked(title:string) {
 
-        this.courseEmitter.emit({...this.course, description});
+        this.todoEmitter.emit({...this.todo, title});
 
     }
 
