@@ -10,7 +10,7 @@
   <div class="courses">
 
     <!-- async pipe gets the values from observable object-->
-    <course-card *ngFor="let todo of (todos$ | async)"
+    <course-card *ngFor="let todo of ((todos$ | async) | filterByCompleted: 'true')"
                  [todo]="todo">
 
       <div>
