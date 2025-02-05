@@ -9,18 +9,34 @@
 
 <div class="courses" *ngIf="courses[0] as course">
 
-    <course-card
+    <!--attribute directive highlighted added-->
+    <course-card highlighted
+    (toggleHighlight)="onToggleHighlight($event)"
+    #highlitorRef = "hl"
             (courseSelected)="onCourseSelected($event)"
                  [course]="course">
 
         <course-image [src]="course.iconUrl"></course-image>
 
-        <div class="course-description">
+        <div class="course-description" (dblclick)="highlitorRef.toggle()"> <!--call directive method-->
             {{ course.longDescription }}
         </div>
 
     </course-card>
 
+    <div class="courses" >
+      <!--directive with input value-->
+      <h1 #highlightHeader [highlighted]="true" (click)="onClickHighlight($event)">Highlighted text</h1>
+
+      <!-- directive binded to attribute-->
+       <textarea [enabledisable]="true"></textarea>
+    </div>
+
+    <div class="courses">
+      <div style="background-color: bisque;">
+        <p highlighted> This is a sample paragraph to demonstrate mouse enter/leave highlight</p>
+      </div>
+    </div>
 
 </div>
 
