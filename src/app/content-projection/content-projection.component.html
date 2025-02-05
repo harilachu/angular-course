@@ -1,0 +1,16 @@
+<!-- select only projects h1 from content -->
+<ng-content select="h1"> Fallback content </ng-content>
+
+<!-- can also use a css class -> select=".course-card". Content with this class will be projected -->
+<!-- multiple contents can be projected-->
+<ng-content select=".course-class1"></ng-content>
+
+<ng-content select=".course-class2"></ng-content>
+
+<!-- use projected name-->
+<ng-content select="card-title"></ng-content>
+
+<!-- project remaining content without any select-->
+<ng-content></ng-content>
+
+<!-- do not use ng content in @if @for @switch. ng content will always be created during build time itself-->

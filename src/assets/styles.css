@@ -38,13 +38,13 @@ button {
 }
 
 course-card.is-first {
-  border-top: 2px solid grey;
-  padding-top: 20px;
+  border-top: 2px solid red;
+  padding-top: 10px;
 }
 
 course-card.is-last {
-  border-bottom: 2px solid grey;
-  padding-top: 20px;
+  border-bottom: 5px solid green;
+  padding-top: 10px;
 }
 
 course-card.is-even {

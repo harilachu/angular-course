@@ -1,0 +1,13 @@
+<div>
+  <h1> Template within Component</h1>
+
+  <div *ngIf="showImage; else blankImageTemp">
+    <img src="../../assets/empty-image.png">
+  </div>
+
+
+  <ng-template #blankImageTemp>
+    <ng-container *ngTemplateOutlet="noImgTempl"></ng-container>
+  </ng-template>
+
+</div>
