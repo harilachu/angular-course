@@ -8,6 +8,7 @@ import { CourseCardComponent } from "./course-card/course-card.component";
 import { CourseService } from './Services/course-service.service';
 import { ContentProjectionComponent } from "./content-projection/content-projection.component";
 import { TempWithinCompComponent } from "./temp-within-comp/temp-within-comp.component";
+import { DeferredComponent } from './defer/deferred.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { TempWithinCompComponent } from "./temp-within-comp/temp-within-comp.com
     BrowserAnimationsModule,
     CourseCardComponent,
     ContentProjectionComponent,
-    TempWithinCompComponent
+    TempWithinCompComponent,
+DeferredComponent
 ],
   providers: [CourseService],
   bootstrap: [AppComponent]

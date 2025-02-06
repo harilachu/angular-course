@@ -9,7 +9,7 @@ import { CourseCardComponent } from './course-card/course-card.component';
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
     standalone: false,
-    providers: []
+    providers: [],
 })
 export class AppComponent implements AfterViewInit {
 
@@ -68,5 +68,5 @@ export class AppComponent implements AfterViewInit {
   }
   //#endregion
 
-  
+
 }
